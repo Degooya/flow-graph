@@ -1,0 +1,65 @@
+.dark-context-menu {
+    color: rgba(5, 0, 56, 1);
+    position: absolute;
+    display: inline-block;
+    z-index: 100;
+    background-color: white;
+    box-shadow: 0 2px 14px 3px #f5f5f5;
+    border-radius: $border-radius-control;
+    min-width: 220px;
+    font-size: 14px;
+    font-weight: 300;
+
+    & .cm-items{
+        //padding: 14px 0px;
+    }
+
+    &  .item {
+        padding: 0.35em 1em;
+        position: relative;
+        height: 36px;
+        cursor: pointer;
+        
+        &.--disabled {
+            color: rgb(134, 134, 134);
+            cursor: default;
+            font-weight: 500;
+            background-color: fbfbfb;
+
+        }
+
+        &:not(.--header):not(.--active):not(.--disabled) {
+            &:hover {
+                background: $color-control-dark-hover;
+            }
+        }
+
+        &.--active {
+            background: $color-primary;
+        }
+
+    }
+
+    &.--nested {
+        left: 100%;
+        top: 0;
+        box-shadow: none;
+    }
+
+    &.--flipped-x.--nested {
+        left: unset;
+        right: 100%;
+    }
+
+    &.--flipped-y.--nested {
+        top: unset;
+        bottom: 0;
+    }
+
+    & > .divider {
+        margin: 0.35em 0;
+        height: 1px;
+        background-color: $color-control-dark-hover;
+    }
+
+}
